@@ -9,7 +9,8 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
 
 const form = useForm({
-    name: '',
+    first_name: '',
+    last_name: '',
     email: '',
     password: '',
     password_confirmation: '',
@@ -33,17 +34,31 @@ const submit = () => {
 
         <form @submit.prevent="submit">
             <div>
-                <InputLabel for="name" value="Name" />
+                <InputLabel for="name" value="First Name" />
                 <TextInput
                     id="name"
-                    v-model="form.name"
+                    v-model="form.first_name"
                     type="text"
                     class="mt-1 block w-full"
                     required
                     autofocus
-                    autocomplete="name"
+                    autocomplete="given-name"
                 />
-                <InputError class="mt-2" :message="form.errors.name" />
+                <InputError class="mt-2" :message="form.errors.first_name" />
+            </div>
+
+            <div class="mt-4">
+                <InputLabel for="name" value="Last Name" />
+                <TextInput
+                    id="name"
+                    v-model="form.last_name"
+                    type="text"
+                    class="mt-1 block w-full"
+                    required
+                    autofocus
+                    autocomplete="family-name"
+                />
+                <InputError class="mt-2" :message="form.errors.last_name" />
             </div>
 
             <div class="mt-4">
@@ -108,5 +123,13 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
+
+
+            <div class="dark:text-gray-300 text-center my-4">OR</div>
+
+            <div class="text-center mb-4"><a :href="route('external.redirect','google')">><PrimaryButton>Sign in with Google</PrimaryButton></a></div>
+            <div class="text-center mb-4"><a :href="route('external.redirect','slack')">><PrimaryButton>Sign in with Slack</PrimaryButton></a></div>
+            <div class="text-center"><a :href="route('external.redirect','github')">><PrimaryButton>Sign in with Github</PrimaryButton></a></div>
+
     </AuthenticationCard>
 </template>

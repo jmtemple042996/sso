@@ -86,5 +86,13 @@ const submit = () => {
                 </PrimaryButton>
             </div>
         </form>
+
+
+            <div class="dark:text-gray-300 text-center my-4">OR</div>
+
+            <div class="text-center mb-4"><a :href="route('external.redirect','google')">><PrimaryButton>Sign in with Google</PrimaryButton></a></div>
+            <div class="text-center mb-4"><a :href="route('external.redirect','slack')">><PrimaryButton>Sign in with Slack</PrimaryButton></a></div>
+            <div class="text-center"><a :href="route('external.redirect','github')">><PrimaryButton>Sign in with Github</PrimaryButton></a></div>
+
     </AuthenticationCard>
 </template>
