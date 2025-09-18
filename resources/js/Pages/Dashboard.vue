@@ -6,10 +6,10 @@ import PrimaryButton from '@/Components/PrimaryButton.vue';
 </script>
 
 <template>
-    <AppLayout title="James M. Temple">
+    <AppLayout title="User Dashboard">
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-                James M. Temple
+                User Dashboard
             </h2>
         </template>
 
